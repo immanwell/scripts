@@ -8,12 +8,25 @@ See **[RESTORE.md](./RESTORE.md)** for a step-by-step guide to switching your
 Claude Code setup between a real Anthropic Claude model and MiniMax (and back),
 including which statusline to install for each.
 
+### One-shot script (run it yourself)
+
+**[switch-to-claude.sh](./switch-to-claude.sh)** does the whole switch in one go —
+no agent required:
+
+```bash
+git clone https://github.com/immanwell/scripts.git
+bash scripts/switch-to-claude.sh
+```
+
+It backs up your current config, removes the MiniMax env overrides, installs the
+Claude statusline, verifies, and tells you the one manual step left (`/login`).
+Idempotent and safe to re-run; works on Ubuntu/Debian, Fedora, Arch, and macOS.
+
 ### Automated handoff for other machines
 
-**[HANDOFF.md](./HANDOFF.md)** is an agent-executable runbook: point a coding
-agent (Claude Code, etc.) on another Ubuntu/Linux machine at it to switch that
-machine from MiniMax to a real Claude model + install the Claude statusline, with
-backup and rollback built in.
+**[HANDOFF.md](./HANDOFF.md)** is the same process as a step-by-step runbook you
+can hand to a coding agent (Claude Code, etc.) instead of running the script
+yourself — with the reasoning behind each step and rollback notes.
 
 ## Subfolders
 
