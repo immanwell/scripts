@@ -28,6 +28,15 @@ Idempotent and safe to re-run; works on Ubuntu/Debian, Fedora, Arch, and macOS.
 can hand to a coding agent (Claude Code, etc.) instead of running the script
 yourself — with the reasoning behind each step and rollback notes.
 
+### Switching a *remote* machine over SSH
+
+**[REMOTE-SSH.md](./REMOTE-SSH.md)** drives the whole switch on a **different**
+box from your own laptop — every step wrapped in an `ssh` call. It also covers the
+two remote gotchas: the **headless `/login`** (copy the URL with `c`, approve in a
+browser on any signed-in machine, paste the code back) and the **`claude update`
+permission fix** for root-owned npm-global installs
+(`sudo npm install -g @anthropic-ai/claude-code@latest`).
+
 ## Subfolders
 
 ### [claude-statusline](./claude-statusline/)
